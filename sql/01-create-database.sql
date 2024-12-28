@@ -15,8 +15,6 @@ CREATE TABLE auth (
     email varchar(255) UNIQUE NOT NULL,
     password varchar(60),
     account_id bigint REFERENCES account(account_id),
-    last_login timestamp,
-    total_tries smallint DEFAULT 0,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP,
     updated_at timestamp
 );
