@@ -23,7 +23,7 @@ CREATE INDEX auth_email_idx ON auth USING HASH (email);
 
 CREATE TABLE todo (
     todo_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name varchar(255),
+    todo_name text,
     account_id bigint REFERENCES account(account_id),
     status smallint,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP,
@@ -34,7 +34,7 @@ CREATE INDEX todo_account_id_idx ON todo (account_id, status);
 
 CREATE TABLE task (
     task_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name text,
+    task_name text,
     status smallint,
     todo_id bigint REFERENCES todo(todo_id),
     created_at timestamp DEFAULT CURRENT_TIMESTAMP,
