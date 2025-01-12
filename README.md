@@ -20,3 +20,9 @@ DB_ACCOUNT_PASSWORD=service
 ```bash
 docker compose up -d
 ```
+
+---
+
+## Notes
+
+ALWAYS setting format file of initial bash file (sql/02-create-user-access.sh) is LF (if not, error will occur)
